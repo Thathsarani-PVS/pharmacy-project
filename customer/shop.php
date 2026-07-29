@@ -58,7 +58,7 @@ if (!empty($params)) {
 $stmt_prod->execute();
 $products_result = $stmt_prod->get_result();
 
-// 4. වම් පැත්තේ පෙන්වීම සඳහා Categories ලැයිස්තුව ලබා ගැනීම
+// 4. වම් පැත්තේ පෙන්වීම සඳහා Categories ලැයිස්තුව (Categories 10ක් දක්වා)
 $cat_query = "SELECT DISTINCT category FROM products WHERE category IS NOT NULL AND category != '' LIMIT 10";
 $cat_result = $conn->query($cat_query);
 ?>
@@ -207,6 +207,27 @@ $cat_result = $conn->query($cat_query);
             background: linear-gradient(135deg, #028074 0%, #016258 100%);
             color: white;
         }
+        .btn-add-cart {
+            background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+            color: white;
+            border-radius: 14px;
+            padding: 11px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            width: 100%;
+            text-align: center;
+            text-decoration: none !important;
+            display: block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 119, 182, 0.2);
+        }
+        .btn-add-cart:hover {
+            background: linear-gradient(135deg, #0077b6 0%, #03045e 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(0, 119, 182, 0.35);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -245,7 +266,7 @@ $cat_result = $conn->query($cat_query);
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.07 18.28c.43-.9 3.05-1.78 4.93-1.78s4.5.88 4.93 1.78C15.57 19.35 13.86 20 12 20s-3.57-.65-4.93-1.72zm11.29-1.45c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
             </svg>
             <span class="user-greeting-name">
-                <?php echo "Hellow, " . htmlspecialchars($firstName); ?>
+                <?php echo "Hi, " . htmlspecialchars($firstName); ?>
             </span>
             <a href="../login/logout.php" class="logout-btn-premium">Logout</a>
         </div>
@@ -298,7 +319,7 @@ $cat_result = $conn->query($cat_query);
             </div>
         </div>
 
-        <!-- Right Side: Available Medicines Grid (Fills the page properly) -->
+        <!-- Right Side: Available Medicines Grid -->
         <div class="col-lg-9">
             <h2 class="fw-bold mb-4" style="color: #007a78;">
                 <?php echo !empty($category) ? htmlspecialchars($category) : 'Available Medicines'; ?>

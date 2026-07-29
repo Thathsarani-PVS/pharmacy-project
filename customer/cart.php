@@ -382,7 +382,7 @@ $grand_total = count($cart_items) > 0 ? ($subtotal + $shopping_fee) : 0.00;
                         <line x1="16" y1="13" x2="8" y2="13"></line>
                         <line x1="16" y1="17" x2="8" y2="17"></line>
                     </svg>
-                    <h5 class="fw-bold text-dark mb-0">Pharmacy Invoice 24H</h5>
+                    <h5 class="fw-bold text-dark mb-0">Pharmacy Invoice</h5>
                 </div>
 
                 <!-- 📇 Customer Details Section in Invoice -->
