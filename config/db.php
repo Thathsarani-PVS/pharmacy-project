@@ -1,4 +1,4 @@
-//connection making//
+
 <?php
 $host = "localhost";
 $user = "root";

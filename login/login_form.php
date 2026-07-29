@@ -204,7 +204,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </form>
 
                         <p class="text-center text-muted small mt-4 mb-0">
-                            Don't have an account? Register here<a href="register.php" style="color: #00a896; text-decoration:none; font-weight:700;">Register here</a>
+                            Don't have an account? Register here <a href="register.php" style="color: #00a896; text-decoration:none; font-weight:700;">Register here</a>
                         </p>
                     </div>
 
